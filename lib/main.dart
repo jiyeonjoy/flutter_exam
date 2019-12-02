@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-
+import 'cupertino_page.dart';
 void main() => runApp(MyApp());
 
 // 변경할 수 없는 위젯
 class MyApp extends StatelessWidget {
   @override
-  // 플러터는 위젯으로 이루어져 있다.
+  // 플러터는 위젯으로 이루어져 있다.[
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HelloPage('Hello World'));
+        //home: HelloPage('Hello World'));
+        // import 해줘야됨!!
+        home: CupertinoPage()
+    );
   }
 }
 
