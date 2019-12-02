@@ -12,10 +12,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        //home: HelloPage('Hello World'));
+        home: HelloPage('Hello World'));
         // import 해줘야됨!!
-        home: CupertinoPage()
-    );
+        //home: CupertinoPage());
   }
 }
 
@@ -55,6 +54,16 @@ class _HelloPageState extends State<HelloPage> {
               children: <Widget>[
                 Text(_message, style: TextStyle(fontSize: 30)),
                 Text('$_counter', style: TextStyle(fontSize: 30)),
+                RaisedButton(
+                  child: Text('화면 이동'),
+                  onPressed: () {
+                    // 자동으로 백버튼 까지 생성됨!
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CupertinoPage())
+                    );
+                  },
+                )
               ],
             )
         ));
